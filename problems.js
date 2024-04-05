@@ -1,7 +1,11 @@
 //Write a function that takes a string as input and returns the string reversed.
 
 function reverseString(str) {
-
+    let newString = ''
+    for (let i = str.length -1; i >= 0 ; i--){
+        newString += str[i]
+    }
+    return newString
 }
 
 // Test cases
@@ -14,6 +18,13 @@ console.log(reverseString("12345")); // Output: "54321"
 //Write a function that takes an array of numbers and returns the maximum number in the array.
 
 function findMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+        max = arr[i];
+        }
+    }
+  return max;
 
 }
 
@@ -25,6 +36,16 @@ console.log(findMax([100, 200, 150])); // Output: 200
 //Write a function that takes a string as input and returns the number of vowels in the string (a, e, i, o, u).
 
 function countVowels(str) {
+    const vowels = ["a","e","i","o","u","A","E","I","O","U",];
+    let count = 0;
+
+    str.split("").forEach((char) => {
+        if (vowels.includes(char)) {
+            count++;
+        }
+    });
+
+    return count;
 
 }
 
